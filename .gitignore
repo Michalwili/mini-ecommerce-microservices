@@ -1,0 +1,25 @@
+# Maven
+target/
+*.log
+
+# IntelliJ
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.jar
+*.war
+*.class
+
+# Docker (opcjonalnie)
+docker-data/
+
+# Env
+.env
