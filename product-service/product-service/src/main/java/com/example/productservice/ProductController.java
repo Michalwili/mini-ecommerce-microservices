@@ -1,7 +1,9 @@
 package com.example.productservice;
 
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -29,6 +31,5 @@ public class ProductController {
         return products.stream()
                 .filter(p -> p.getId().equals(id))
                 .findFirst()
-                .orElseThrow(() -> new RuntimeException("Product not found"));
-    }
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found"));    }
 }
