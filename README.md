@@ -12,6 +12,34 @@ The system consists of 3 microservices:
 * **order-service** → handles order creation
 * **inventory-service** → manages stock
 
+## 🎯 Purpose
+
+The goal of this project was to design and implement a microservices-based system
+with both synchronous (REST) and asynchronous (Kafka) communication.
+
+It simulates a real-world eCommerce order flow with stock validation and event-driven updates.
+
+## 🧩 Architecture Diagram
+
+Client
+  |
+  v
+order-service ---> inventory-service (REST)
+  |
+  v
+Kafka (OrderCreatedEvent)
+  |
+  v
+inventory-service (updates stock)
+
+## 🧠 Key Concepts
+
+- Microservices decomposition
+- REST vs event-driven communication
+- Data consistency in distributed systems
+- Basic resilience (rate limiting)
+- Performance optimization (caching)
+
 ---
 
 # 🔁 Business Flow
